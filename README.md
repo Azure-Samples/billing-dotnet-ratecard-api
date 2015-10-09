@@ -18,14 +18,14 @@ First, download the source code using your favorite **git** shell or command lin
     git clone https://github.com/Azure-Samples/billing-dotnet-ratecard-api.git
     cd billing-dotnet-ratecard-api
 
-Then follow the steps in [this readme](./ConsoleApp-Billing-RateCard/readme.md) to complete the required configuration work and build the sample in Visual Studio.
+Then follow the steps in [the solution readme](./ConsoleApp-Billing-RateCard) to complete the required configuration work and build the sample in Visual Studio.
 
 ## Complete billing samples index
 Below is the list of all of the available Azure BIlling API code samples:
 
--	[ConsoleApp-Billing-Usage](../ConsoleApp-Billing-Usage) - This sample will help you get started with using the Usage API.
--	[ConsoleApp-Billing-RateCard](../ConsoleApp-Billing-RateCard) - This sample help you get started with using the RateCard API.
--	[WebApp-Billing-MultiTenant](../WebApp-Billing-MultiTenant) - This Multi-Tenant sample creates a WebApp that allows the logged-in user to give it consent, to call the Azure Graph API and the Usage API on the user's behalf. It also shows the OAuth flows required to get consent for the ‘Reader’ role, to access the list of Microsoft Azure subscriptions that the user wants to allow access to. 
+-	[ConsoleApp-Billing-Usage](https://github.com/Azure-Samples/billing-dotnet-usage-api) - This sample will help you get started with the Usage API.
+-	[ConsoleApp-Billing-RateCard](https://github.com/Azure-Samples/billing-dotnet-ratecard-api/) - This sample help you get started with the RateCard API.
+-	[WebApp-Billing-MultiTenant](https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/) - This Multi-Tenant sample creates a WebApp that allows the logged-in user to give it consent, to call the Azure Graph API and the Usage API on the user's behalf. It also shows the OAuth flows required to get consent for the ‘Reader’ role, to access the list of Microsoft Azure subscriptions that the user wants to allow access to. 
 
 ## Need Help?
 
