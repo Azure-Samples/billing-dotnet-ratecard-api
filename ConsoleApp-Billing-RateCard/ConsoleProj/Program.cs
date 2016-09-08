@@ -30,7 +30,7 @@ namespace ARMAPI_Test
              * See the App.config file for all AppSettings key/value pairs
              * You can get a list of offer numbers from this URL: http://azure.microsoft.com/en-us/support/legal/offer-details/
              * You can configure an OfferID for this API by updating 'MS-AZR-{Offer Number}'
-             * The RateCard Service/API is currently in preview; please use 2016-06-01-preview for api-version
+             * The RateCard Service/API is currently in preview; please use "2015-06-01-preview" or "2016-08-31-preview" for api-version (see https://msdn.microsoft.com/en-us/library/azure/mt219005 for details)
              */
 
             // Build up the HttpWebRequest
@@ -38,7 +38,7 @@ namespace ARMAPI_Test
                        ConfigurationManager.AppSettings["ARMBillingServiceURL"],
                        "subscriptions",
                        ConfigurationManager.AppSettings["SubscriptionID"],
-                       "providers/Microsoft.Commerce/RateCard?api-version=2015-06-01-preview&$filter=OfferDurableId eq 'MS-AZR-0121p' and Currency eq 'USD' and Locale eq 'en-US' and RegionInfo eq 'US'");
+                       "providers/Microsoft.Commerce/RateCard?api-version=2016-08-31-preview&$filter=OfferDurableId eq 'MS-AZR-0121p' and Currency eq 'USD' and Locale eq 'en-US' and RegionInfo eq 'US'");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
 
             // Add the OAuth Authorization header, and Content Type header
