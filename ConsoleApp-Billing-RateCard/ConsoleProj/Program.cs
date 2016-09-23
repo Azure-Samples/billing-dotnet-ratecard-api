@@ -30,7 +30,8 @@ namespace ARMAPI_Test
              * See the App.config file for all AppSettings key/value pairs
              * You can get a list of offer numbers from this URL: http://azure.microsoft.com/en-us/support/legal/offer-details/
              * You can configure an OfferID for this API by updating 'MS-AZR-{Offer Number}'
-             * The RateCard Service/API is currently in preview; please use 2016-06-01-preview for api-version
+             * The RateCard Service/API is currently in preview; please use "2015-06-01-preview" or "2016-08-31-preview" for api-version (see https://msdn.microsoft.com/en-us/library/azure/mt219005 for details)
+             * Please see the readme if you are having problems configuring or authenticating: https://github.com/Azure-Samples/billing-dotnet-ratecard-api
              */
 
             // Build up the HttpWebRequest
@@ -38,7 +39,7 @@ namespace ARMAPI_Test
                        ConfigurationManager.AppSettings["ARMBillingServiceURL"],
                        "subscriptions",
                        ConfigurationManager.AppSettings["SubscriptionID"],
-                       "providers/Microsoft.Commerce/RateCard?api-version=2015-06-01-preview&$filter=OfferDurableId eq 'MS-AZR-0121p' and Currency eq 'USD' and Locale eq 'en-US' and RegionInfo eq 'US'");
+                       "providers/Microsoft.Commerce/RateCard?api-version=2016-08-31-preview&$filter=OfferDurableId eq 'MS-AZR-0121p' and Currency eq 'USD' and Locale eq 'en-US' and RegionInfo eq 'US'");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
 
             // Add the OAuth Authorization header, and Content Type header
@@ -89,7 +90,8 @@ namespace ARMAPI_Test
             //Ask the logged in user to authenticate, so that this client app can get a token on his behalf
             var result = authenticationContext.AcquireToken(String.Format("{0}/",ConfigurationManager.AppSettings["ARMBillingServiceURL"]),
                                                             ConfigurationManager.AppSettings["ClientID"],
-                                                            new Uri(ConfigurationManager.AppSettings["ADALRedirectURL"]));
+                                                            new Uri(ConfigurationManager.AppSettings["ADALRedirectURL"]),
+                                                            PromptBehavior.Always);
 
             if (result == null)
             {
