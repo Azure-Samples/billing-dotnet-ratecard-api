@@ -47,7 +47,7 @@ From your shell (ie: Git Bash, etc.) or command line, run the following command 
 After you've configured your tenant and downloaded the sample app, you will need to go into the local sub directory in which the Visual Studio solution is stored (typically in <your-git-root-directory>\BillingCodeSamples), and open the ConsoleApp-Billing-RateCard.sln Visual Studio solution.  Upon opening, navigate to the app.config file and update the following key/value pairs, using your subscription and AAD specific configuration information from earlier.  NOTE: It's very important that all values match your configuration!
 
 	<add key="ADALRedirectURL" value="https://localhost/"/>
-	<add key="TenantDomain" value="ENTER.AZURE.AD.DNS.NAME"/>                           
+	<add key="TenantDomain" value="ENTER.AAD.TENANT.DNS.NAME"/>                           
 	<add key="SubscriptionID" value="00000000-0000-0000-0000-000000000000"/>
 	<add key="ClientId" value="00000000-0000-0000-0000-000000000000"/>
 
